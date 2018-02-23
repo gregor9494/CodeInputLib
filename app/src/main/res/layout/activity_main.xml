@@ -1,18 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pl.gg.codeinputlib.MainActivity">
+    android:background="#FFF"
+    android:orientation="vertical"
+    android:padding="10dp">
 
-    <TextView
+    <pl.gg.codeinputlibrary.codeinputview.CodeInputView
+        android:id="@+id/pairing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="20dp"
+        app:space_between_letters_size="10dp"
+        app:code_text_size="18sp"
+        app:custom_underline_width="20dp"
+        app:animate_on_complete="false"
+        app:show_keyboard="true"
+        app:time_character_is_shown_while_typing="500">
 
-</android.support.constraint.ConstraintLayout>
+        <requestFocus />
+    </pl.gg.codeinputlibrary.codeinputview.CodeInputView>
+
+</LinearLayout>

@@ -26,7 +26,6 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -267,7 +266,9 @@ public class CodeInputView extends View {
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
         if (MeasureSpec.getMode(widthMeasureSpec) != MeasureSpec.EXACTLY) {
-            float desiredWidth = mLengthOfCode * mUnderlineWidth + (spaceBetweenLetters * mLengthOfCode - 1);
+            float w1 = mLengthOfCode * mUnderlineWidth;
+            float w2 = (spaceBetweenLetters * (mLengthOfCode - 1));
+            float desiredWidth = w1 + w2;
             width = Math.min((int) desiredWidth, width);
         }
         if (MeasureSpec.getMode(heightMeasureSpec) != MeasureSpec.EXACTLY) {
